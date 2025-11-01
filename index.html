@@ -42,16 +42,27 @@ body {
   align-items:center;
   justify-content:center;
 }
+/* Video webcam: nascosto su desktop, visibile solo su mobile */
 #videoPreview {
   position: fixed;
   right: 12px;
   top: 12px;
   width: 300px;
-  height: 200;
+  height: 200px;
   border-radius: 8px;
-  display: none;
+  display: none; /* nascosto su desktop */
   z-index: 999;
 }
+
+/* Solo su mobile (max-width:600px): mostra e riduci dimensioni */
+@media (max-width: 600px) {
+  #videoPreview {
+    display: block;
+    width: 180px;
+    height: 120px;
+  }
+}
+
 .controls {
   margin-top: 18px;
   color: #ccc;
